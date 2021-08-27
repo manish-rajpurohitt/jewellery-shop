@@ -1,0 +1,19 @@
+{
+  "name": "jewellery-shop-api",
+  "version": "1.0.0",
+  "description": "Backend API's for jewellery shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manish-rajpurohitt/jewellery-shop/backend"
+  },
+  "author": "Manish, Vikram, Mitesh, Tharun",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
