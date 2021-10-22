@@ -4,11 +4,12 @@ const sendEmail = require('../utils/sendEmail');
 const crypto = require('crypto');
 
 exports.register = async (req, res, next) => {
-    const {username, email, password} = req.body;
-
+    const {email, password, firstName, lastName} = req.body;
     try{
+        const addedOn = Date.now();
+        const displayName = firstName +" "+ lastName;
         const user = await User.create({
-            username, email, password
+            email, password, firstName, lastName, addedOn, displayName
         });
         sendToken(user, 201, res);
     }
@@ -22,7 +23,6 @@ exports.login = async (req, res, next) => {
 
     if(!email || !password)
        return next(new ErrorResponse("Please provide email and password.", 400))
-
     try{
         const user = await User.findOne({email}).select("+password");
         if(!user)
