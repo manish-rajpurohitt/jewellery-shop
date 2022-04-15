@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const CustomerAgreementDetails = mongoose.Schema({
+const CustomerAgreementDetailsSchema = mongoose.Schema({
     dateAndTimeOfAgreement:{
         type: Date,
         default: Date.now
@@ -31,4 +31,5 @@ const CustomerAgreementDetails = mongoose.Schema({
     }
 });
 
+const CustomerAgreementDetails = mongoose.model("customerAgreementDetails",CustomerAgreementDetailsSchema);
 module.exports = CustomerAgreementDetails;
