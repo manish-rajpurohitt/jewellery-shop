@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
-const Address = require("./Address");
 
 const UserSchema = new mongoose.Schema({
     firstName : {
@@ -41,14 +40,6 @@ const UserSchema = new mongoose.Schema({
     addedOn:{
         type: Date
     },
-    refundPaymentUpiForCod:{
-        type:String,
-        match: [
-            /^[\w.-]+@[\w.-]+$/,
-            "Please provide a valid VPA"
-        ]
-    },
-    address : [Address],
     updatedOn: {
         type: Date,
         default : Date.now
@@ -83,6 +74,6 @@ UserSchema.methods.getResetPasswordToken = function(){
     this.resetPasswordExpire = Date.now() + 10 * (60 * 1000);
     return resetToken;
 }
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("Admins", UserSchema);
 
 module.exports = User

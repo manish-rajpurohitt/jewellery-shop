@@ -6,6 +6,7 @@ exports.addNewAddress = async (req, res, next) =>{
         const id = req.user.email;
         const user = await User.findOne({id});
         const address = req.body;
+        console.log(address)
         if(!user)
             return next(new ErrorResponse("Invalid user credentials", 400));
         user.address.push(address);
