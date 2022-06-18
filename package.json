@@ -1,0 +1,27 @@
+{
+  "name": "jewellery-shop",
+  "version": "1.0.0",
+  "description": "jewellery shop ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manish-rajpurohitt/jewellery-shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manish-rajpurohitt/jewellery-shop/issues"
+  },
+  "homepage": "https://github.com/manish-rajpurohitt/jewellery-shop#readme",
+  "dependencies": {
+    "concurrently": "^6.3.0",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
+  }
+}
